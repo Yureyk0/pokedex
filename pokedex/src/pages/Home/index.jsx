@@ -1,41 +1,40 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { getPokemons } from '../../redux/actions'
-import PokemonsGrid from '../../components/PokemonsGrid'
-import Pagination from '../../components/Pagination'
+import React from 'react';
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getPokemons } from '../../redux/actions';
+import PokemonGrid from './PokemonGrid';
+import Pagination from '../../components/Pagination';
+
+const POKEMONS_PER_PAGE = 10;
 
 function Home() {
-  const [listPokemons, setListPokemons] = useState()
-  const [currentPage, setCurrentPage] = useState(1)
-  const [pokemonsPerPage] = useState(10)
+  const [listPokemons, setListPokemons] = useState();
+  const [currentPage, setCurrentPage] = useState(1);
   const list = useSelector((state) => {
-    const { getPokemosReduser } = state
-    return getPokemosReduser.pokemons
-  })
+    const { getPokemosReduser } = state;
+    return getPokemosReduser.pokemons;
+  });
   // setListPokemons(list)
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getPokemons())
-  }, [])
-  console.log(list)
+    dispatch(getPokemons());
+  }, []);
+  console.log(list);
 
-  const lastPokemonIndex = currentPage * pokemonsPerPage
-  const firstPokemonIndex = lastPokemonIndex - pokemonsPerPage
-  const currentPokemon = list.slice(firstPokemonIndex, lastPokemonIndex)
+  const lastPokemonIndex = currentPage * POKEMONS_PER_PAGE;
+  const firstPokemonIndex = lastPokemonIndex - POKEMONS_PER_PAGE;
+  const currentPokemon = list.slice(firstPokemonIndex, lastPokemonIndex);
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber)
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <>
-      <PokemonsGrid pokemonsList={currentPokemon} />
-      <Pagination
-        pokemonsPerPage={pokemonsPerPage}
-        totalPokemons={list.length}
-        paginate={paginate}
-      />
-    </>
-  )
+    <div>
+      {currentPokemon.map((item) => {
+        return <PokemonGrid key={item.id} item={item} />;
+      })}
+      <Pagination pokemonsPerPage={POKEMONS_PER_PAGE} totalPokemons={list.length} paginate={paginate} />
+    </div>
+  );
 }
 
-export default Home
+export default Home;

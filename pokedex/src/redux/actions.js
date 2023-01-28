@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { api } from '../api/index'
 import {
   GET_POKEMONS,
   GET_POKEMON,
@@ -21,14 +22,11 @@ export function loaderOff() {
 export function getPokemons() {
   return async (dispatch) => {
     try {
-      // dispatch(loaderOn())
-      const allPokemon = await axios.get(
-        'https://pokeapi.co/api/v2/pokemon?limit=100'
-      )
+      const allPokemon = await api.get('/pokemon?limit=100')
       const pokemonData = await Promise.all(
         allPokemon.data.results.map(async (pokemon) => {
           const pokemonRecord = await axios.get(pokemon.url)
-          // console.log(pokemonRecord.data)
+
           return pokemonRecord.data
         })
       )
@@ -36,7 +34,6 @@ export function getPokemons() {
         type: POKEMONS_LOAD,
         data: pokemonData,
       })
-      // dispatch(loaderOff())
     } catch (err) {
       // dispatch({
       //   err,

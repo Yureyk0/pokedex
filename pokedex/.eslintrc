@@ -1,0 +1,20 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["react", "react-hooks"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react-hooks/recommended",
+    "prettier"
+  ],
+  "parserOptions": {
+    "project": ["tsconfig.json"]
+  },
+  "rules": {
+    "react-hooks/exhaustive-deps": "error"
+  },
+  "settings": {
+    "react": {
+      "version": "require('./package.json').dependencies.react"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.pokemonGrid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.pokemon-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 35%;
+}
+.li-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.pokemon-item-li {
+  justify-content: space-between;
+  height: 60px;
+  border: 1px solid darkblue;
+  padding: 0 10px 0 0;
+  width: 100%;
+}
+.pokemon-item-li-left-content img {
+  height: 65px;
+}

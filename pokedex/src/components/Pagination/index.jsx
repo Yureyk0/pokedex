@@ -1,23 +1,18 @@
-import React from 'react'
+import React from 'react';
+import './Parination.css';
 
 function Pagination({ pokemonsPerPage, totalPokemons, paginate }) {
-  let i = 1
-  const pagesNums = Array.from(
-    { length: Math.ceil(totalPokemons / pokemonsPerPage) },
-    () => i++
-  )
+  const pagesNums = Array.from(Array(Math.ceil(totalPokemons / pokemonsPerPage)), (_, i) => i + 1);
 
   return (
-    <>
-      <ul>
-        {pagesNums.map((res) => (
-          <li key={`p${res}`} onClick={() => paginate(res)}>
-            {res}
-          </li>
-        ))}
-      </ul>
-    </>
-  )
+    <ul className='pagination'>
+      {pagesNums.map((res) => (
+        <li key={`p${res}`} className='pagination-item' onClick={() => paginate(res)}>
+          {res}
+        </li>
+      ))}
+    </ul>
+  );
 }
 
-export default Pagination
+export default Pagination;
