@@ -8,24 +8,23 @@ import Pagination from '../../components/Pagination';
 const POKEMONS_PER_PAGE = 10;
 
 function Home() {
-  const [listPokemons, setListPokemons] = useState();
   const [currentPage, setCurrentPage] = useState(1);
+  const dispatch = useDispatch();
+
   const list = useSelector((state) => {
     const { getPokemosReduser } = state;
     return getPokemosReduser.pokemons;
   });
-  // setListPokemons(list)
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getPokemons());
-  }, []);
-  console.log(list);
 
   const lastPokemonIndex = currentPage * POKEMONS_PER_PAGE;
   const firstPokemonIndex = lastPokemonIndex - POKEMONS_PER_PAGE;
   const currentPokemon = list.slice(firstPokemonIndex, lastPokemonIndex);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  useEffect(() => {
+    dispatch(getPokemons());
+  }, []);
 
   return (
     <div>

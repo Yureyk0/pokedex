@@ -7,7 +7,7 @@ function PokemonCard({ item }) {
     <div className='pokemon-card'>
       <div className='title-block'>
         <p className='title-id'>id {item.id}</p>
-        <p className='title-name'>{item.name}</p>
+        <p className='title-name'>{item.name.toUpperCase()}</p>
       </div>
       <img src={item.sprites.front_default} alt={item.name} />
       <table className='block-main-stats'>

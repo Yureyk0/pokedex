@@ -15,8 +15,9 @@
 .title-block {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 90%;
   justify-content: space-between;
+  padding: 0 10px;
 }
 .pokemon-card img {
   width: 250px;
@@ -24,6 +25,9 @@
 .block-main-stats {
   width: 100%;
   border-collapse: collapse;
+}
+.block-main-stats tr:last-child {
+  border-radius: 0 0 20px 20px;
 }
 .block-main-stats th {
   background: rgb(129, 129, 129);

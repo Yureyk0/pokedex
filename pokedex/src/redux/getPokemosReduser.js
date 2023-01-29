@@ -1,10 +1,10 @@
-import { GET_POKEMONS, GET_POKEMON, POKEMONS_LOAD } from './types'
+import { POKEMONS_LOAD } from './types';
 
 const initialState = {
   pokemons: [],
   // pokemon: {},
   // loading: true,
-}
+};
 
 export const getPokemosReduser = (state = initialState, action) => {
   switch (action.type) {
@@ -12,8 +12,8 @@ export const getPokemosReduser = (state = initialState, action) => {
       return {
         ...state,
         pokemons: action.data,
-      }
+      };
     default:
-      return state
+      return state;
   }
-}
+};

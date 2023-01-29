@@ -1,0 +1,45 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.container-about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+}
+.about-title-pokemon {
+  font-size: 25px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid gainsboro;
+}
+
+.id-pokemon {
+  padding: 5px;
+  background: red;
+  color: white;
+  border-radius: 20%;
+  height: fit-content;
+}
+.content-pokemon {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.about-left-block {
+  display: flex;
+
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+}
+.about-left-block img {
+  width: 50%;
+}
+.about-right-block {
+  width: 50%;
+}
