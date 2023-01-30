@@ -2,11 +2,15 @@
   display: flex;
   flex-direction: row;
   list-style-type: none;
+  width: 100%;
+  justify-content: center;
+  margin-top: 25px;
 }
 .pagination-item {
   cursor: pointer;
-  border: 1px solid black;
-  border-radius: 2px;
-  padding: 5px;
+  border: 0.5px solid #30363d;
+  border-radius: 4px;
+  padding: 5px 10px;
   margin: 0 15px 0 0;
+  background: #0d1117;
 }

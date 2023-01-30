@@ -1,42 +1,62 @@
 .pokemon-card {
   position: fixed;
-  left: 60%;
-  top: 100px;
+  left: 55%;
+  top: 75px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 250px;
-  height: 400px;
-  border: 1px solid black;
-  border-radius: 20px;
-  background: rgba(234, 171, 63, 0.908);
+  width: 450px;
+  height: 500px;
+  background: #0d1117;
+  border: 0.5px solid #30363d;
+  border-radius: 6px;
+}
+.pokemon-card-top-block {
+  width: 90%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 .title-block {
+  width: 100%;
   display: flex;
   flex-direction: row;
-  width: 90%;
   justify-content: space-between;
-  padding: 0 10px;
 }
 .pokemon-card img {
+  margin-top: 50px;
   width: 250px;
 }
 .block-main-stats {
+  position: relative;
+  top: -1px;
   width: 100%;
   border-collapse: collapse;
+  border-radius: 0 0 6px 6px;
+  background: #161b22;
+  font-size: 14px;
 }
-.block-main-stats tr:last-child {
-  border-radius: 0 0 20px 20px;
+
+/* .block-main-stats tr:last-child>td {
+  border-radius: 0 0 6px 0;
+}
+.block-main-stats tr:last-child>th {
+  border-radius: 0 0 0 6px;
+} */
+.block-main-stats th,
+td {
+  /* border: 0.5px solid #30363d; */
+  padding: 8px 16px;
+}
+.block-main-stats tr {
+  border-top: 0.5px solid #30363d;
 }
 .block-main-stats th {
-  background: rgb(129, 129, 129);
-  text-align: center;
-  width: 50%;
-  padding: 5px;
+  text-align: start;
 }
 .block-main-stats td {
-  text-align: start;
-  padding: 5px;
-  background: rgb(255, 245, 245);
+  text-align: end;
 }

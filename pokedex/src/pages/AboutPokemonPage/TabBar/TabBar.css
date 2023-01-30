@@ -52,7 +52,6 @@ button {
 }
 .content {
   background: white;
-  padding: 20px;
   margin-top: 10px;
   height: 100%;
   display: none;
@@ -62,16 +61,48 @@ button {
 .content h2 {
   padding: 0px 0 5px 0px;
 }
-.content hr {
-  width: 100px;
-  height: 2px;
-  background: #222;
-  margin-bottom: 5px;
-}
+
 .content p {
   width: 100%;
   height: 100%;
 }
 .active-content {
   display: block;
+}
+.tab-type-block {
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid gainsboro;
+}
+.tab-type-title {
+  font-size: 20px;
+}
+.tab-type-items {
+  display: flex;
+  flex-direction: row;
+}
+.tab-type-item {
+  padding: 5px 10px;
+  background: rgba(230, 108, 2, 0.915);
+  color: white;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+.tab-abilities-block {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px;
+}
+.tab-abilities-block ul {
+  margin-left: 35px;
+  padding: 10px;
+}
+.stats-value {
+  background: rgba(230, 108, 2, 0.915);
+  color: white;
+  padding: 0px 7px;
+  border-radius: 10px;
 }

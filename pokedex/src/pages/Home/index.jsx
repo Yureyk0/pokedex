@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getPokemons } from '../../redux/actions';
 import PokemonGrid from './PokemonGrid';
 import Pagination from '../../components/Pagination';
+import SearchBar from '../../components/SearchBar';
 
 const POKEMONS_PER_PAGE = 10;
 
@@ -26,12 +27,24 @@ function Home() {
     dispatch(getPokemons());
   }, []);
 
+  if (!Object.keys(list).length) return <div>Loading</div>;
+
   return (
-    <div>
-      {currentPokemon.map((item) => {
-        return <PokemonGrid key={item.id} item={item} />;
-      })}
-      <Pagination pokemonsPerPage={POKEMONS_PER_PAGE} totalPokemons={list.length} paginate={paginate} />
+    <div className='container'>
+      <div className='grid-container'>
+        <div className='grid-pokemon-list'>
+          {currentPokemon.map((item) => {
+            return <PokemonGrid key={item.id} item={item} />;
+          })}
+        </div>
+        <SearchBar listPokemon={list} />
+      </div>
+      <Pagination
+        pokemonsPerPage={POKEMONS_PER_PAGE}
+        totalPokemons={list.length}
+        paginate={paginate}
+        className='paginate'
+      />
     </div>
   );
 }

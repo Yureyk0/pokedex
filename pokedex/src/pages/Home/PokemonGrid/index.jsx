@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
 import PokemonCard from '../PokemonCard';
-import AppRouter from '../../../routes';
 import './PokemonGrid.css';
 import { Link } from 'react-router-dom';
 
@@ -11,7 +10,7 @@ function PokemonGrid({ item }) {
     <div className='pokemonGrid'>
       <Link
         to={`/about/${item.id}`}
-        style={{ textDecoration: 'none', display: 'block', width: '100%', color: 'black' }}
+        style={{ textDecoration: 'none', display: 'block', width: '100%', color: '#c9d1d9' }}
       >
         <div className='pokemon-list'>
           <div
