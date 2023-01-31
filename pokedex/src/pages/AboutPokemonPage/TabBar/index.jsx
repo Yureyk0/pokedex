@@ -19,9 +19,6 @@ const TabBar = ({ pokemon }) => {
         <button className={toggleState === 2 ? 'tabs active-tabs' : 'tabs'} onClick={() => toggleTab(2)}>
           Stats
         </button>
-        <button className={toggleState === 3 ? 'tabs active-tabs' : 'tabs'} onClick={() => toggleTab(3)}>
-          Tab 3
-        </button>
       </div>
       <div className='content-tabs'>
         <div className={toggleState === 1 ? 'content  active-content' : 'content'}>
