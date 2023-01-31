@@ -1,4 +1,4 @@
-import { POKEMON_LOAD } from './types';
+import { POKEMON_LOAD } from '../types';
 
 const initialState = {
   pokemon: {},

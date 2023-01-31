@@ -3,12 +3,12 @@ import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getPokemon } from '../../redux/actions';
+import { getPokemon } from '../../redux/actions/actions';
 import { usePokemonSelector } from '../../redux/selector';
 import TabBar from './TabBar';
 import './AboutPokemonPage.css';
 
-function AboutPokemonPage() {
+const AboutPokemonPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { id } = useParams();
@@ -18,13 +18,6 @@ function AboutPokemonPage() {
   useEffect(() => {
     dispatch(getPokemon(id));
   }, []);
-
-  useEffect(
-    () => () => {
-      console.log('hui');
-    },
-    []
-  );
 
   if (!Object.keys(pokemon).length) return <div>Loading</div>;
 
@@ -49,6 +42,6 @@ function AboutPokemonPage() {
       </div>
     </div>
   );
-}
+};
 
 export default AboutPokemonPage;

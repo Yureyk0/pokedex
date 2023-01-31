@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import uniqid from 'uniqid';
 import './SearchBar.css';
 
-function SearchBar({ listPokemon }) {
+const SearchBar = ({ listPokemon }) => {
   const namesPokebkons = listPokemon.map((item) => {
     return {
       id: item.id,
@@ -20,7 +20,6 @@ function SearchBar({ listPokemon }) {
 
   const onSearch = (searchTerm) => {
     setValue(searchTerm);
-    console.log('search ', searchTerm);
     navigate(`/about/${searchTerm}`);
   };
 
@@ -45,6 +44,6 @@ function SearchBar({ listPokemon }) {
       <button onClick={() => onSearch(value)}> Search </button>
     </div>
   );
-}
+};
 
 export default SearchBar;

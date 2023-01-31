@@ -1,8 +1,7 @@
 import React from 'react';
 import './PokemonCard.css';
 
-function PokemonCard({ item }) {
-  console.log('item>>>', item);
+const PokemonCard = ({ item }) => {
   return (
     <div className='pokemon-card'>
       <div className='pokemon-card-top-block'>
@@ -29,6 +28,6 @@ function PokemonCard({ item }) {
       </table>
     </div>
   );
-}
+};
 
 export default PokemonCard;

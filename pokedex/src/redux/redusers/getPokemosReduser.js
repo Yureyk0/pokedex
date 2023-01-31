@@ -1,4 +1,4 @@
-import { POKEMONS_LOAD } from './types';
+import { POKEMONS_LOAD } from '../types';
 
 const initialState = {
   pokemons: [],

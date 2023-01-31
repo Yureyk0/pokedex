@@ -1,19 +1,8 @@
 import axios from 'axios';
-import { api } from '../api/index';
-import { POKEMONS_LOAD, POKEMON_LOAD } from './types';
+import { api } from '../../api/index';
+import { POKEMONS_LOAD, POKEMON_LOAD } from '../types';
 
-// export function loaderOn() {
-//   return {
-//     type: LOADER_DISPLAY_ON,
-//   };
-// }
-// export function loaderOff() {
-//   return {
-//     type: LOADER_DISPLAY_OFF,
-//   };
-// }
-
-export function getPokemons() {
+export const getPokemons = () => {
   return async (dispatch) => {
     try {
       const allPokemon = await api.get('/pokemon?limit=100');
@@ -32,12 +21,11 @@ export function getPokemons() {
       console.log(err);
     }
   };
-}
-export function getPokemon(id) {
+};
+export const getPokemon = (id) => {
   return async (dispatch) => {
     try {
       const soloPokemon = await api.get(`/pokemon/${id}`);
-      console.log(soloPokemon);
 
       dispatch({
         type: POKEMON_LOAD,
@@ -47,18 +35,4 @@ export function getPokemon(id) {
       console.log(err);
     }
   };
-}
-
-// export const getPokemon = (id) => async (dispatch) => {
-//   try {
-//     const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
-//     dispatch({
-//       type: GET_POKEMON,
-//       payload: res.data,
-//     })
-//   } catch (err) {
-//     dispatch({
-//       err,
-//     })
-//   }
-// }
+};

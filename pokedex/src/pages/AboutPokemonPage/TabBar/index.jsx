@@ -3,7 +3,7 @@ import { useState } from 'react';
 import uniqid from 'uniqid';
 import './TabBar.css';
 
-function TabBar({ pokemon }) {
+const TabBar = ({ pokemon }) => {
   const [toggleState, setToggleState] = useState(1);
 
   const toggleTab = (index) => {
@@ -75,6 +75,6 @@ function TabBar({ pokemon }) {
       </div>
     </div>
   );
-}
+};
 
 export default TabBar;
