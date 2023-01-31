@@ -28,21 +28,21 @@ function SearchBar({ listPokemon }) {
     <div className='search-container'>
       <div className='search-inner'>
         <input type='text' value={value} onChange={onChange} placeholder='Search pokemon ...' />
-        <button onClick={() => onSearch(value)}> Search </button>
+        <div className='dropdown'>
+          {namesPokebkons
+            .filter((item) => {
+              const searchTerm = value.toLowerCase();
+              return searchTerm && item.name.startsWith(searchTerm) && item.name !== searchTerm;
+            })
+            .slice(0, 10)
+            .map((item) => (
+              <div onClick={() => onSearch(item.name)} className='dropdown-row' key={uniqid()}>
+                {item.name}
+              </div>
+            ))}
+        </div>
       </div>
-      <div className='dropdown'>
-        {namesPokebkons
-          .filter((item) => {
-            const searchTerm = value.toLowerCase();
-            return searchTerm && item.name.startsWith(searchTerm) && item.name !== searchTerm;
-          })
-          .slice(0, 10)
-          .map((item) => (
-            <div onClick={() => onSearch(item.name)} className='dropdown-row' key={uniqid()}>
-              {item.name}
-            </div>
-          ))}
-      </div>
+      <button onClick={() => onSearch(value)}> Search </button>
     </div>
   );
 }
