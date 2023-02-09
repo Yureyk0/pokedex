@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import uniqid from 'uniqid';
+import EvoBar from './EvoBar';
 import './TabBar.css';
 
 const TabBar = ({ pokemon }) => {
@@ -9,7 +10,6 @@ const TabBar = ({ pokemon }) => {
   const toggleTab = (index) => {
     setToggleState(index);
   };
-
   return (
     <div className='tabbar-container'>
       <div className='bloc-tabs'>
@@ -18,6 +18,9 @@ const TabBar = ({ pokemon }) => {
         </button>
         <button className={toggleState === 2 ? 'tabs active-tabs' : 'tabs'} onClick={() => toggleTab(2)}>
           Stats
+        </button>
+        <button className={toggleState === 3 ? 'tabs active-tabs' : 'tabs'} onClick={() => toggleTab(3)}>
+          Evolution
         </button>
       </div>
       <div className='content-tabs'>
@@ -68,6 +71,9 @@ const TabBar = ({ pokemon }) => {
               </div>
             );
           })}
+        </div>
+        <div className={toggleState === 3 ? 'content  active-content' : 'content'}>
+          <EvoBar idPokemon={pokemon.id} />
         </div>
       </div>
     </div>

@@ -1,8 +1,18 @@
 import axios from 'axios';
-// import { GET_POKEMONS, GET_POKEMON, CHANGE_FILTER } from '../constants/actionTypes';
-
-// export const api = axios.require('https://pokeapi.co/api/v2')
 
 export const api = axios.create({
   baseURL: 'https://pokeapi.co/api/v2',
 });
+
+try {
+  const allPokemon = await api.get('/pokemon?limit=100');
+  const pokemonData = await Promise.all(
+    allPokemon.data.results.map(async (pokemon) => {
+      const pokemonRecord = await axios.get(pokemon.url);
+
+      return pokemonRecord.data;
+    })
+  );
+} catch (err) {
+  console.log(err);
+}

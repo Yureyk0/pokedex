@@ -2,8 +2,6 @@ import { POKEMONS_LOAD } from '../types';
 
 const initialState = {
   pokemons: [],
-  // pokemon: {},
-  // loading: true,
 };
 
 export const getPokemosReduser = (state = initialState, action) => {

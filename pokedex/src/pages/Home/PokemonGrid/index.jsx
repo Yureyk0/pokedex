@@ -1,8 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import PokemonCard from '../PokemonCard';
 import './PokemonGrid.css';
-import { Link } from 'react-router-dom';
 
 const PokemonGrid = ({ item }) => {
   const [isShown, setIsShown] = useState(false);

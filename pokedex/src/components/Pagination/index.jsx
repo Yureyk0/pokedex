@@ -3,7 +3,6 @@ import './Parination.css';
 
 const Pagination = ({ pokemonsPerPage, totalPokemons, paginate, currentPage }) => {
   const pagesNums = Array.from(Array(Math.ceil(totalPokemons / pokemonsPerPage)), (_, i) => i + 1);
-  console.log(pokemonsPerPage);
   return (
     <ul className='pagination'>
       {pagesNums.map((res) => (

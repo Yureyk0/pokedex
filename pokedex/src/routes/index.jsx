@@ -1,4 +1,4 @@
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import AboutPokemonPage from '../pages/AboutPokemonPage';
 import Home from '../pages/Home';
 

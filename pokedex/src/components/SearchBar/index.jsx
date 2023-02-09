@@ -19,8 +19,9 @@ const SearchBar = ({ listPokemon }) => {
   };
 
   const onSearch = (searchTerm) => {
+    const idPokemon = namesPokebkons.find((obj) => obj.name == searchTerm);
     setValue(searchTerm);
-    navigate(`/about/${searchTerm}`);
+    navigate(`/about/${idPokemon.id}`);
   };
 
   return (
